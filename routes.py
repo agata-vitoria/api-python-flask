@@ -10,7 +10,6 @@ def olaMundo():
 @app.route("/cadastra/usuario", methods=["POST"])
 def cadastraUsuario():
     body = request.get_json()
-    parametros_corretos = validaParametros()
     usuario = insertUsuario(body['nome'], body['email'], body['senha'])
     return geraResponse(200, "Usuário criado!", "user", usuario)
     
